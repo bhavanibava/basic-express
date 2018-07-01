@@ -54,6 +54,13 @@ app.get('/:id([1-9]{4})',function(req,res){
     console.log('router id:',req.params.id);
 })
 
+app.use('/5000',function(err,req,res,next){
+    if(err){
+        res.status(500);
+        res.send('operation not found');
+        next(err);
+    }  
+});
 // app.get('/:name/:id',function(req,res){
 //     res.send('print router name and id.....id: '+req.params.id+' name: '+req.params.name);
 //     console.log('router name and id:'+req.params.name+' and '+req.params.id);

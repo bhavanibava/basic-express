@@ -20,14 +20,16 @@ router.delete('/',function(req,res){
 })
 //get method using regex //
 router.get('/user/:id([1-9]{4})',function(req,res){
-    res.send('use regex to access router randomly......id: '+req.params.id);
+    res.json({
+        message : "use regex to access router randomly id: "+req.params.id
+    })
     console.log('random router id:',req.params.id);
 })
 //there is no match then it will run //
-router.get('*',function(req,res){
-     res.send('invalid user id:'+req.params.id);
-     console.log('invalid router id');
-})
+// router.get('*',function(req,res){
+//      res.send('invalid user id:');
+//      console.log('invalid router id');
+// })
 //regex for string //
 router.get('/ab?cd',function(req,res){
     res.send('regex use to access path using ?operator');
