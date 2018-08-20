@@ -6,6 +6,6 @@ How to use:
   
   - npm install
   
-  -node app.js
+  - node app.js
   
-  -open restlet and check api's
+  - open restlet and check api's
